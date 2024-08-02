@@ -1,7 +1,7 @@
 package bloomfilter
 
 import (
-	"fmt"
+	"log"
 	"math/rand"
 
 	"github.com/nithishravindra/bloom-filter/internal/hashing"
@@ -48,5 +48,5 @@ func (b *BloomFilter) Exists(key string, numHashFn int) bool {
 
 // Print prints the Bloom filter's contents (for debugging purposes)
 func (b *BloomFilter) Print() {
-	fmt.Println(b.Filter)
+	log.Println(b.Filter)
 }

@@ -2,16 +2,12 @@ package main
 
 import (
 	"log"
-	"math/rand"
-	"time"
 
 	"github.com/google/uuid"
 	"github.com/nithishravindra/bloom-filter/internal/bloomfilter"
 )
 
 func main() {
-	rand.Seed(time.Now().UnixNano()) // Seed the random number generator
-
 	dataset := make([]string, 0)
 	dataset_exists := make(map[string]bool)
 	dataset_notexists := make(map[string]bool)
