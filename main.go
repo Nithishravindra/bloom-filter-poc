@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"math/rand"
 	"time"
 
@@ -32,7 +32,8 @@ func main() {
 	// Test Bloom filter with different number of hash functions
 	for j := 1; j <= 100; j++ { // Adjust the maximum number of hash functions as needed
 		bloom := bloomfilter.NewBloomFilter(10000) // Choose a fixed size for the Bloom filter
-		fmt.Printf("Testing with %d hash functions\n", j)
+
+		log.Printf("Testing with %d hash functions\n", j)
 
 		// Add existing elements to the Bloom filter
 		for key := range dataset_exists {
@@ -50,6 +51,6 @@ func main() {
 			}
 		}
 		falsePositiveRate := float64(falsePositive) / float64(len(dataset_notexists))
-		fmt.Printf("False positive rate: %.4f\n", falsePositiveRate)
+		log.Printf("False positive rate: %.4f\n", falsePositiveRate)
 	}
 }
